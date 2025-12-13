@@ -1,12 +1,10 @@
 [project]
 name = "prod-assert"
-version = "0.1.0"
+version = "0.1.1"
 description = "Prod safe Python assert library"
 readme = "README.md"
 requires-python = ">=3.9"
-dependencies = [
-    "uv-build>=0.9.17",
-]
+dependencies = []
 authors = [
     {name = "Ivan Derdić", email = "ivan.derdic@proton.me"}
 ]
@@ -29,12 +27,9 @@ dev = [
     "basedpyright>=1.36.1",
     "prod-assert",
     "pytest>=8.4.2",
+    "uv-build>=0.9.17",
 ]
 
-[tool.uv.workspace]
-members = [
-    ".",
-]
 
 [tool.uv.sources]
 prod-assert = { workspace = true }
