@@ -41,10 +41,31 @@ def assert_eq(a: Any, b: Any, message: Optional[str]=None) -> None:
     :type b: Any
     :param message: Optional custom message.
     :type message: Optional[str]
-    :raises AssertionFailed: If a does not equal b.
+    :raises AssertionFailed: If a does not equals b.
     """
 
 
     if message is None:
         message = f'Condition {a} == {b} is false'
     prod_assert(a == b, message)
+    
+
+def assert_not_eq(a: Any, b: Any, message: Optional[str]=None) -> None:
+    """
+    Function that checks if a does not equals b.
+    A custom message can be provided. The default message is 'Condition {a} != {b} is false'.
+
+    :param a: Any value.
+    :type a: Any
+    :param b: Any value.
+    :type b: Any
+    :param message: Optional custom message.
+    :type message: Optional[str]
+    :raises AssertionFailed: If a equals b.
+    """
+
+
+    if message is None:
+        message = f'Condition {a} != {b} is false'
+    prod_assert(a != b, message)
+
