@@ -27,5 +27,14 @@ build-backend = "uv_build"
 [dependency-groups]
 dev = [
     "basedpyright>=1.36.1",
+    "prod-assert",
     "pytest>=8.4.2",
 ]
+
+[tool.uv.workspace]
+members = [
+    ".",
+]
+
+[tool.uv.sources]
+prod-assert = { workspace = true }

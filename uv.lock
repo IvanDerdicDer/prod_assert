@@ -108,6 +108,7 @@ dependencies = [
 [package.dev-dependencies]
 dev = [
     { name = "basedpyright" },
+    { name = "prod-assert" },
     { name = "pytest", version = "8.4.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
     { name = "pytest", version = "9.0.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
 ]
@@ -118,6 +119,7 @@ requires-dist = [{ name = "uv-build", specifier = ">=0.9.17" }]
 [package.metadata.requires-dev]
 dev = [
     { name = "basedpyright", specifier = ">=1.36.1" },
+    { name = "prod-assert", editable = "." },
     { name = "pytest", specifier = ">=8.4.2" },
 ]
 
