@@ -11,4 +11,6 @@ from prod_assert._main import (
     assert_is_not_none,
     assert_in,
     assert_not_in,
+    assert_is_instance,
+    assert_not_is_instance
 )

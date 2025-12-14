@@ -283,3 +283,53 @@ def assert_not_in(
         message = f'Condition {a} not in {b} is false'
     prod_assert(a not in b, message, assertion_exception)
 
+
+def assert_is_instance(
+    a: Any,
+    b: Any,
+    message: Optional[str]=None,
+    assertion_exception: AssertionException=AssertionFailed
+) -> None:
+    """
+    Function that checks if a is instance of b.
+    A custom message can be provided. The default message is 'Condition isinstance({a}, {b}) is false'.
+
+    :param a: Any value.
+    :type a: Any
+    :param b: Any value.
+    :type b: Any
+    :param message: Optional custom message.
+    :type message: Optional[str]
+    :raises AssertionFailed: If a is not instance of b.
+    """
+
+
+    if message is None:
+        message = f'Condition isinstance({a}, {b}) is false'
+    prod_assert(isinstance(a, b), message, assertion_exception)
+
+
+def assert_not_is_instance(
+    a: Any,
+    b: Any,
+    message: Optional[str]=None,
+    assertion_exception: AssertionException=AssertionFailed
+) -> None:
+    """
+    Function that checks if a is not instance of b.
+    A custom message can be provided. The default message is 'Condition not isinstance({a}, {b}) is false'.
+
+    :param a: Any value.
+    :type a: Any
+    :param b: Any value.
+    :type b: Any
+    :param message: Optional custom message.
+    :type message: Optional[str]
+    :raises AssertionFailed: If a is instance of b.
+    """
+
+
+    if message is None:
+        message = f'Condition not isinstance({a}, {b}) is false'
+    prod_assert(not isinstance(a, b), message, assertion_exception)
+
