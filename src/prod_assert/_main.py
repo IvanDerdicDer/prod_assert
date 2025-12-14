@@ -66,7 +66,7 @@ def assert_eq(
     if message is None:
         message = f'Condition {a} == {b} is false'
     prod_assert(a == b, message, assertion_exception)
-    
+   
 
 def assert_not_eq(
     a: Any,
@@ -91,4 +91,48 @@ def assert_not_eq(
     if message is None:
         message = f'Condition {a} != {b} is false'
     prod_assert(a != b, message=message, assertion_exception=assertion_exception)
+
+
+def assert_true(
+    a: Any,
+    message: Optional[str]=None,
+    assertion_exception: AssertionException=AssertionFailed
+) -> None:
+    """
+    Function that checks if a is True.
+    A custom message can be provided. The default message is 'Condition {a} == True is false'.
+
+    :param a: Any value.
+    :type a: Any
+    :param message: Optional custom message.
+    :type message: Optional[str]
+    :raises AssertionFailed: If a does not equals True.
+    """
+
+
+    if message is None:
+        message = f'Condition {a} == True is false'
+    prod_assert(a == True, message, assertion_exception)
+ 
+
+def assert_false(
+    a: Any,
+    message: Optional[str]=None,
+    assertion_exception: AssertionException=AssertionFailed
+) -> None:
+    """
+    Function that checks if a is False.
+    A custom message can be provided. The default message is 'Condition {a} == False is false'.
+
+    :param a: Any value.
+    :type a: Any
+    :param message: Optional custom message.
+    :type message: Optional[str]
+    :raises AssertionFailed: If a does not equals False.
+    """
+
+
+    if message is None:
+        message = f'Condition {a} == False is false'
+    prod_assert(a == False, message, assertion_exception)
 

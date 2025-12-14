@@ -41,3 +41,27 @@ class TestProdAssert(unittest.TestCase):
         self.assertRaises(prod_assert.AssertionFailed, prod_assert.assert_not_eq, a, b)
         self.assertRaisesRegex(prod_assert.AssertionFailed, message, prod_assert.assert_not_eq, a, b, message=message)
 
+
+    def test_assert_true(self):
+        a = True
+        b = False
+        c = 2
+        message = 'test'
+
+        self.assertIsNone(prod_assert.assert_true(a))
+        self.assertRaises(prod_assert.AssertionFailed, prod_assert.assert_true, b)
+        self.assertRaises(prod_assert.AssertionFailed, prod_assert.assert_true, c)
+        self.assertRaisesRegex(prod_assert.AssertionFailed, message, prod_assert.assert_true, b, message=message)
+
+
+    def test_assert_false(self):
+        a = False
+        b = True
+        c = 2
+        message = 'test'
+
+        self.assertIsNone(prod_assert.assert_false(a))
+        self.assertRaises(prod_assert.AssertionFailed, prod_assert.assert_false, b)
+        self.assertRaises(prod_assert.AssertionFailed, prod_assert.assert_false, c)
+        self.assertRaisesRegex(prod_assert.AssertionFailed, message, prod_assert.assert_false, b, message=message)
+
