@@ -31,3 +31,113 @@ assert_eq(1, 2, assertion_exception=AssertionError)
 ### AssertionError: Condition 1 == 2 is false
 
 ```
+
+# Functions and Classes
+
+```python
+class AssertionFailed(Exception):
+    pass
+
+
+AssertionException = Union[AssertionFailed, AssertionError]
+
+
+def prod_assert(
+    condition: bool,
+    message: str,
+    assertion_exception: AssertionException=AssertionFailed
+) -> None:
+
+
+def assert_eq(
+    a: Any,
+    b: Any,
+    message: Optional[str]=None,
+    assertion_exception: AssertionException=AssertionFailed
+) -> None:
+   
+
+def assert_not_eq(
+    a: Any,
+    b: Any,
+    message: Optional[str]=None,
+    assertion_exception: AssertionException=AssertionFailed
+) -> None:
+
+
+def assert_true(
+    a: Any,
+    message: Optional[str]=None,
+    assertion_exception: AssertionException=AssertionFailed
+) -> None:
+ 
+
+def assert_false(
+    a: Any,
+    message: Optional[str]=None,
+    assertion_exception: AssertionException=AssertionFailed
+) -> None:
+
+
+def assert_is(
+    a: Any,
+    b: Any,
+    message: Optional[str]=None,
+    assertion_exception: AssertionException=AssertionFailed
+) -> None:
+
+
+def assert_is_not(
+    a: Any,
+    b: Any,
+    message: Optional[str]=None,
+    assertion_exception: AssertionException=AssertionFailed
+) -> None:
+
+
+def assert_is_none(
+    a: Any,
+    message: Optional[str]=None,
+    assertion_exception: AssertionException=AssertionFailed
+) -> None:
+
+
+def assert_is_not_none(
+    a: Any,
+    message: Optional[str]=None,
+    assertion_exception: AssertionException=AssertionFailed
+) -> None:
+
+
+def assert_in(
+    a: Any,
+    b: Container[Any],
+    message: Optional[str]=None,
+    assertion_exception: AssertionException=AssertionFailed
+) -> None:
+
+
+def assert_not_in(
+    a: Any,
+    b: Container[Any],
+    message: Optional[str]=None,
+    assertion_exception: AssertionException=AssertionFailed
+) -> None:
+
+
+def assert_is_instance(
+    a: Any,
+    b: Any,
+    message: Optional[str]=None,
+    assertion_exception: AssertionException=AssertionFailed
+) -> None:
+
+
+def assert_not_is_instance(
+    a: Any,
+    b: Any,
+    message: Optional[str]=None,
+    assertion_exception: AssertionException=AssertionFailed
+) -> None:
+
+```
