@@ -10,6 +10,12 @@ Asserts in this library, by default, raise AssertionFailed excetption, with the 
 
 A senior at work annoyed me by saying I can't use assert in prod, so here are asserts I can use in prod.
 
+# Installation
+
+```
+pip install prod-assert
+```
+
 # Example
 
 ```python
