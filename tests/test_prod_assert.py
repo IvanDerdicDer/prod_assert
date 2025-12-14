@@ -12,9 +12,12 @@ class TestProdAssert(unittest.TestCase):
         message_fail = 1
         
         self.assertIsNone(prod_assert.prod_assert(condition_true, message))
+        self.assertIsNone(prod_assert.prod_assert(condition_true, message, AssertionError))
         self.assertRaises(prod_assert.AssertionFailed, prod_assert.prod_assert, condition_false, message)
+        self.assertRaises(AssertionError, prod_assert.prod_assert, condition_false, message, AssertionError)
         self.assertRaises(ValueError, prod_assert.prod_assert, condition_fail, message)
         self.assertRaises(ValueError, prod_assert.prod_assert, condition_true, message_fail)
+        self.assertRaises(ValueError, prod_assert.prod_assert, condition_true, message_fail, ValueError)
 
 
     def test_assert_eq(self):

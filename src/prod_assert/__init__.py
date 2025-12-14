@@ -1,4 +1,4 @@
-from prod_assert.main import (
+from prod_assert._main import (
     AssertionFailed,
     prod_assert,
     assert_eq,
