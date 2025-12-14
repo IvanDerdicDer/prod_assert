@@ -1,6 +1,6 @@
 [project]
 name = "prod-assert"
-version = "0.1.0"
+version = "1.0.0"
 description = "Prod safe Python assert library"
 readme = "README.md"
 requires-python = ">=3.9"
