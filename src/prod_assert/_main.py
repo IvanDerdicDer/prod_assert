@@ -1,4 +1,5 @@
 from typing import Any, Optional, Union
+from collections.abc import Container
 
 
 class AssertionFailed(Exception):
@@ -229,4 +230,56 @@ def assert_is_not_none(
     if message is None:
         message = f'Condition {a} is not None is false'
     prod_assert(a is not None, message, assertion_exception)
+
+
+
+def assert_in(
+    a: Any,
+    b: Container[Any],
+    message: Optional[str]=None,
+    assertion_exception: AssertionException=AssertionFailed
+) -> None:
+    """
+    Function that checks if a is in b.
+    A custom message can be provided. The default message is 'Condition {a} in {b} is false'.
+
+    :param a: Any value.
+    :type a: Any
+    :param b: Any value.
+    :type b: Any
+    :param message: Optional custom message.
+    :type message: Optional[str]
+    :raises AssertionFailed: If a is not in b.
+    """
+
+
+    if message is None:
+        message = f'Condition {a} in {b} is false'
+    prod_assert(a in b, message, assertion_exception)
+
+
+
+def assert_not_in(
+    a: Any,
+    b: Container[Any],
+    message: Optional[str]=None,
+    assertion_exception: AssertionException=AssertionFailed
+) -> None:
+    """
+    Function that checks if a is not in b.
+    A custom message can be provided. The default message is 'Condition {a} not in {b} is false'.
+
+    :param a: Any value.
+    :type a: Any
+    :param b: Any value.
+    :type b: Any
+    :param message: Optional custom message.
+    :type message: Optional[str]
+    :raises AssertionFailed: If a is in b.
+    """
+
+
+    if message is None:
+        message = f'Condition {a} not in {b} is false'
+    prod_assert(a not in b, message, assertion_exception)
 

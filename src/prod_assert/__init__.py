@@ -9,4 +9,6 @@ from prod_assert._main import (
     assert_is_not,
     assert_is_none,
     assert_is_not_none,
+    assert_in,
+    assert_not_in,
 )
