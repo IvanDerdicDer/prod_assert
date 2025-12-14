@@ -186,3 +186,47 @@ def assert_is_not(
         message = f'Condition {a} is not {b} is false'
     prod_assert(a is not b, message, assertion_exception)
 
+
+def assert_is_none(
+    a: Any,
+    message: Optional[str]=None,
+    assertion_exception: AssertionException=AssertionFailed
+) -> None:
+    """
+    Function that checks if a is None.
+    A custom message can be provided. The default message is 'Condition {a} is None is false'.
+
+    :param a: Any value.
+    :type a: Any
+    :param message: Optional custom message.
+    :type message: Optional[str]
+    :raises AssertionFailed: If a is not None.
+    """
+
+
+    if message is None:
+        message = f'Condition {a} is None is false'
+    prod_assert(a is None, message, assertion_exception)
+
+
+def assert_is_not_none(
+    a: Any,
+    message: Optional[str]=None,
+    assertion_exception: AssertionException=AssertionFailed
+) -> None:
+    """
+    Function that checks if a is not None.
+    A custom message can be provided. The default message is 'Condition {a} is not None is false'.
+
+    :param a: Any value.
+    :type a: Any
+    :param message: Optional custom message.
+    :type message: Optional[str]
+    :raises AssertionFailed: If a is None.
+    """
+
+
+    if message is None:
+        message = f'Condition {a} is not None is false'
+    prod_assert(a is not None, message, assertion_exception)
+
